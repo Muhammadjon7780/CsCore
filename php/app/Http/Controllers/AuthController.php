@@ -20,6 +20,10 @@ class AuthController extends Controller
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
+        if ($request->password !== $user->password) {
+            # code...
+        }
+
 
         return response()->json(['message' => 'Login successful'], 200);
     }
